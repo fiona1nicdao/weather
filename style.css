@@ -1,8 +1,28 @@
-/* .card{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-} */
 body {
     background-color: cornflowerblue;
+    margin: 10px;
+}
+header {
+    display: flex;
+    align-items: center;
+    background-color: #0000ff;
+    margin-bottom: 20px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+aside {
+    flex: 1;
+    background-color: #ffebcd;
+    padding: 10px;
+    margin: 10px;
+}
+.mainpart {
+    flex: 3;
+    margin: 10px;
+}
+.mainCity {
+    padding: 100px;
+    background-color: #ffebcd;
 }
