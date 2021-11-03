@@ -5,7 +5,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    background-color: #0000ff;
+    background-color: #326fca;
     margin-bottom: 20px;
 }
 main {
@@ -17,6 +17,19 @@ aside {
     background-color: #ffebcd;
     padding: 10px;
     margin: 10px;
+}
+.cityList {
+    display: flex;
+    flex-direction: column;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+button {
+    padding: 5px;
+    margin: 5px;
 }
 .mainpart {
     flex: 3;
