@@ -36,6 +36,13 @@ button {
     margin: 10px;
 }
 .mainCity {
-    padding: 100px;
+    /* padding: 100px; */
     background-color: #ffebcd;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+}
+
+footer {
+    background-color: #7fffd4;
 }
