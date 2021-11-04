@@ -9,6 +9,7 @@
 - the city is added to search history 
 - weather conditions include: city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index 
 - UV index needs to change color to indicate whether the conditions are favorable, moderate, or severe 
+-resource for UV index [epa.gov](https://www.epa.gov/sunsafety/uv-index-scale-0)
 - Present with a 5-day forecast that displays the date, icon representation of weather conditions, the temperature, the wind speed and humidity 
 - when I click on a City in the Search history, I am presented with the current and future conditions for that city 
 

@@ -13,10 +13,11 @@ main {
     flex-wrap: wrap;
 }
 aside {
-    flex: 1;
     background-color: #ffebcd;
-    padding: 10px;
-    margin: 10px;
+    /* padding: 10px; */
+    /* margin: 10px; */
+    display: flex;
+    flex-direction: column;
 }
 .cityList {
     display: flex;
@@ -32,15 +33,14 @@ button {
     margin: 5px;
 }
 .mainpart {
-    flex: 3;
-    margin: 10px;
+    /* margin: 10px; */
 }
 .mainCity {
-    /* padding: 100px; */
     background-color: #ffebcd;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
+}
+
+.card{
+    background-color: #ffebcd;
 }
 
 footer {

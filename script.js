@@ -1,20 +1,85 @@
 /*
-add in API 
-
 */
 var inputField = document.querySelector("#cityname")
 var btnSearchEl = document.querySelector(".btnSearch")
-
+var btnAusEl =document.querySelector(".btnAus")
+var btnChiEl =document.querySelector(".btnChi")
+var btnNewEl =document.querySelector(".btnNew")
+var btnOrlEl =document.querySelector(".btnOrl")
+var btnSanEl =document.querySelector(".btnSan")
+var btnSeaEl =document.querySelector(".btnSea")
+var btnDenEl =document.querySelector(".btnDen")
+var btnAtlEl =document.querySelector(".btnAtl")
+var requestUrl
+var cityName
 // Button &function for type in "search for a city"
-btnSearchEl.addEventListener("click",fetchData)
-
-function fetchData(event) {
+btnSearchEl.addEventListener("click",searchTextbox);
+function searchTextbox(event) {
     event.preventDefault()
-    console.log(inputField.value)
-    var cityName = inputField.value
+    console.log(cityName)
+    cityName = inputField.value
+    fetchData()
+}
+// austin button
+btnAusEl.addEventListener("click", austin)
+function austin() {
+    // location.reload()
+    console.log(cityName)
+    cityName = 'Austin'
+    fetchData()   
+}
+// chicago button
+btnChiEl.addEventListener("click", chicago)
+function chicago() {
+    console.log(cityName)
+    cityName = 'Chicago'
+    fetchData()   
+}
+// new york button
+btnNewEl.addEventListener("click", newyork)
+function newyork() {
+    console.log(cityName)
+    cityName = 'New York'
+    fetchData()   
+}
+// orlando button
+btnOrlEl.addEventListener("click", orlando)
+function orlando() {
+    console.log(cityName)
+    cityName = 'Orlando'
+    fetchData()   
+}
+// san francisco button
+btnSanEl.addEventListener("click", sanfrancisco)
+function sanfrancisco() {
+    console.log(cityName)
+    cityName = 'San Francisco'
+    fetchData()   
+}
+// seallte button
+btnSeaEl.addEventListener("click", seattle)
+function seattle() {
+    console.log(cityName)
+    cityName = 'Seattle'
+    fetchData()   
+}
+
+btnDenEl.addEventListener("click", denver)
+function denver() {
+    console.log(cityName)
+    cityName = 'Denver'
+    fetchData()   
+}
+btnAtlEl.addEventListener("click", atlanta)
+function atlanta() {
+    console.log(cityName)
+    cityName = 'Atlanta'
+    fetchData()   
+}
+// fetch data 
+function fetchData() {
     var apiKey = 'b1d3856bac61869cb925c991abf62e2c'
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial' + '&appid=' + apiKey
-    console.log(requestUrl)
+    requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial' + '&appid=' + apiKey
 
     fetch(requestUrl)
     .then(function(response) {
@@ -27,7 +92,6 @@ function fetchData(event) {
         // city name
         var nameCity = document.createElement('h2')
         nameCity.textContent = weatherData.name
-        console.log(nameCity)
         var mainCity =document.body.children[1].children[1].children[0] 
         // var mainCity =document.getElementById(".city")
         mainCity.append(nameCity)
@@ -39,8 +103,13 @@ function fetchData(event) {
 
         // temp
         var tempCity = document.createElement('p')
-        tempCity.textContent = "Temperature: " + weatherData.main.temp
+        tempCity.textContent = "Temperature: " + weatherData.main.temp + '\xB0'
         mainCity.appendChild(tempCity)
+
+        // wind speed
+        var windCity = document.createElement('p')
+        windCity.textContent = "Wind Speed: " + weatherData.wind.speed +" MPH" 
+        mainCity.appendChild(windCity)
 
         // Humidity
         var humidity = document.createElement('p')
@@ -62,56 +131,54 @@ function fetchData(event) {
         .then(function(uvData){
             console.log(uvData, weatherData)
             var uvEl = document.createElement('p')
-            uvEl.textContent = "UV: " + uvData.current.uvi
+            var uv = uvData.current.uvi
+            uvEl.textContent = "UV: " + uv
             mainCity.appendChild(uvEl)
+            uvEl.classList.add("uvStyle")
+            var uvSyleEl = document.querySelector(".uvStyle")
+            console.log(typeof uv)
+            if (uv <= 2.99) {
+                uvSyleEl.setAttribute("style", "padding: 20px; background-color: green")
+            } else if (uv >= 3 && uv <= 7.99) {
+                uvSyleEl.setAttribute("style", "padding:20px; background-color: yellow")
+            } else if (uv >= 8) {
+                uvSyleEl.setAttribute("style", "padding: 20px; background-color: red")
+            }
 
             //5-day forecast
-            // day 1
             // date
-            var day01 = document.createElement('h3') 
-            var unix01 = uvData.daily[1].dt
-            // var date01 = new Date(unix01*1000)
-            day01.textContent = unix01
-            console.log(uvData.daily[1].dt)
-            var card01 = document.getElementById("day1")
-            card01.appendChild(day01)
+            for (var i=0; i <5; i++){
+                var day = document.createElement('p')
+                var unix = uvData.daily[i+1].dt
+                var date = new Date(unix*1000)
+                var date0 = date.toLocaleDateString("en-US")
+                day.textContent = date0
+                document.body.children[1].children[1].children[1].children[1].children[i].appendChild(day)
+            }
             // 1 icon
-            var day1Icon = document.createElement('img')
-            day1Icon.src ='http://openweathermap.org/img/wn/' + uvData.daily[1]
+            for (var i=0; i<5;i++) {
+                var icon = document.createElement('img')
+                icon.src = 'http://openweathermap.org/img/wn/' + uvData.daily[i+1].weather[0].icon +'@2x.png'
+                document.body.children[1].children[1].children[1].children[1].children[i].appendChild(icon)
+            }
             // 1 temp
+            for (var i=0;i<5;i++) {
+                var temp = document.createElement('p')
+                temp.textContent = "temp: " + uvData.daily[i+1].temp.day + '\xB0'
+                document.body.children[1].children[1].children[1].children[1].children[i].appendChild(temp)
+            }
             // 1 wind
+            for (var i=0;i<5;i++) {
+                var wind = document.createElement('p')
+                wind.textContent = "wind: "+ uvData.daily[i+1].wind_speed + " MPH"
+                document.body.children[1].children[1].children[1].children[1].children[i].appendChild(wind)
+            }
             // 1 humidity 
-
-            // for loog for other cards ??? try it out 
-            var day02 = document.createElement('h3') 
-            var unix02 = uvData.daily[2].dt
-            day02.textContent = unix02
-            console.log(uvData.daily[2].dt)
-            var card02 = document.getElementById("day2")
-            card02.appendChild(day02)
-
-            var day03 = document.createElement('h3') 
-            var unix03 = uvData.daily[3].dt
-            day03.textContent = unix03
-            console.log(uvData.daily[3].dt)
-            var card03 = document.getElementById("day3")
-            card03.appendChild(day03)
-
-            var day04 = document.createElement('h3') 
-            var unix04 = uvData.daily[4].dt
-            day04.textContent = unix04
-            console.log(uvData.daily[4].dt)
-            var card04 = document.getElementById("day4")
-            card04.appendChild(day04)
-
-            var day05 = document.createElement('h3') 
-            var unix05 = uvData.daily[5].dt
-            day05.textContent = unix05
-            console.log(uvData.daily[5].dt)
-            var card05 = document.getElementById("day5")
-            card05.appendChild(day05)
-
-
+            for (var i=0;i<5;i++) {
+                var humidity = document.createElement('p')
+                humidity.textContent= "humidity: "+ uvData.daily[i+1].humidity +"%"
+                document.body.children[1].children[1].children[1].children[1].children[i].appendChild(humidity)
+            }
         })
 
     })
@@ -119,30 +186,10 @@ function fetchData(event) {
 
 
 // place data into the webpage 
+var timeEl = document.querySelector(".time")
 function getTime() {
-    var timeEl = document.querySelector(".time")
-    timeEl.textContent= moment().format("MM/DD/YYYY");
+    var time = moment().format("MM/DD/YYYY");
+    timeEl.innerHTML= time
+    console.log(time)
 }
 getTime()
-
-// Button & function for austin 
-
-// 5-Day Forecast/ date/ icon/ temp/ wind/ humidity 
-// need to use 
-
-// btnSearchEl.addEventListener("click", get5dayData)
-// function get5dayData() {
-//     var cityName = inputField.value
-//     console.log(cityName)
-//     var apiKey = 'b1d3856bac61869cb925c991abf62e2c'
-//     var fiveDayURL ='https://api.openweathermap.org/data/2.5/forecast/daily?q=' + cityName + '&units=imperial&cnt=7&appid=' + apiKey
-//     console.log(fiveDayURL)
-//     fetch('https://api.openweathermap.org/data/2.5/forecast/daily?q=London&units=metric&cnt=7&appid=b1d3856bac61869cb925c991abf62e2c')
-//     .then(function(response){
-//         return response.json();
-//     })
-//     .then(function(fiveDayData){
-//         console.log(fiveDayData)
-//     })
-
-// }
