@@ -8,8 +8,13 @@ var btnSanEl =document.querySelector(".btnSan")
 var btnSeaEl =document.querySelector(".btnSea")
 var btnDenEl =document.querySelector(".btnDen")
 var btnAtlEl =document.querySelector(".btnAtl")
+var btnClear =document.querySelector(".btnClear")
 var requestUrl
 var cityName
+// refresh page
+btnClear.addEventListener("click", function(){
+    location.reload()
+})
 // Button &function for type in "search for a city"
 btnSearchEl.addEventListener("click",searchTextbox);
 function searchTextbox(event) {
