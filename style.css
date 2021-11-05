@@ -1,23 +1,28 @@
 body {
-    background-color: cornflowerblue;
-    margin: 10px;
+    background-color: #537dcc;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 header {
     display: flex;
-    align-items: center;
-    background-color: #326fca;
+    justify-content: center;
+    background-color: #154a99;
+    color: #f0ffff;
     margin-bottom: 20px;
+    padding-top: 10px;
 }
 main {
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 10px;
 }
 aside {
-    background-color: #ffebcd;
-    /* padding: 10px; */
-    /* margin: 10px; */
+    background-color: #e8e9fa;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
 }
 .cityList {
     display: flex;
@@ -28,21 +33,57 @@ form {
     flex-direction: column;
     align-items: stretch;
 }
+label {
+    font-size: 20px;
+    font-weight: 700;
+}
+.btnSearch {
+    background-color: #4b80cf;
+    color:#f0ffff;
+
+}
 button {
     padding: 5px;
-    margin: 5px;
-}
-.mainpart {
-    /* margin: 10px; */
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #6e97d3;
+    color:#f0ffff;
+    font-weight: 500;
 }
 .mainCity {
-    background-color: #ffebcd;
+    background-color: #e8e9fa;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 20px;
+}
+h3 {
+    color:#f0ffff;
+    font-weight: 700;
 }
 
 .card{
-    background-color: #ffebcd;
+    background-color: #e8e9fa;
+    padding-bottom: 10px;
+}
+.uvStyle {
+    width: fit-content;
+    padding: 10px;
+    color:#f0ffff;
+}
+.iconStyle {
+    background-color: #9cb3d6; 
+    border-radius: 20px;
+}
+.line{
+    display: flex;
+    padding-right: 20px;
 }
 
 footer {
-    background-color: #7fffd4;
+    background-color: #154a99;
+    color:#f0ffff;
+    padding: 30px;
+    /* position: absolute; */
+    bottom:0;
+    width: 100%;
 }
