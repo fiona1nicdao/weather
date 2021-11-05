@@ -117,7 +117,7 @@ function fetchData() {
 
         // weather icon
         var weatherIcon = document.createElement('img')
-        weatherIcon.src= 'http://openweathermap.org/img/wn/'+weatherData.weather[0].icon+'@2x.png'
+        weatherIcon.src= 'https://openweathermap.org/img/wn/'+weatherData.weather[0].icon+'@2x.png'
         var mainCity2 =document.body.children[1].children[1].children[0] 
         mainCity2.appendChild(weatherIcon)
         weatherIcon.classList.add("iconStyle")
@@ -188,7 +188,7 @@ function moreFetch() {
         // icon
         for (var i=0; i<5;i++) {
             var icon = document.createElement('img')
-            icon.src = 'http://openweathermap.org/img/wn/' + uvData.daily[i+1].weather[0].icon +'@2x.png'
+            icon.src = 'https://openweathermap.org/img/wn/' + uvData.daily[i+1].weather[0].icon +'@2x.png'
             document.body.children[1].children[1].children[1].children[1].children[i].appendChild(icon)
             icon.classList.add("iconStyle")
         }
