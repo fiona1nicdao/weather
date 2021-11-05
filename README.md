@@ -17,5 +17,4 @@
 Here is the link to the [Weather Dashboard Webpage](https://fiona1nicdao.github.io/Homework_06/)
 
 #Preview
-![WeatherDashboard]()
-<!-- add image in png file! -->
+![WeatherDashboard](./images/weather.png)
