@@ -1,5 +1,5 @@
-# Homework_06
 # Weather Dashboard
+![License: MIT](<https://img.shields.io/badge/License-MIT-yellow.svg>)
 
 # Objectives 
 - make a webpage to see the weather outlook for multiple cities 
@@ -16,5 +16,15 @@
 #Link to Webpage 
 Here is the link to the [Weather Dashboard Webpage](https://fiona1nicdao.github.io/Homework_06/)
 
+ ## License 
+  This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+## Technologies Used:
+Javascript, CSS, HTML, OpenWeatherMap [API](https://openweathermap.org/api) 
+
 #Preview
 ![WeatherDashboard](./images/weather.png)
+
+
+ ## Questions
+  For any further assistance, you may contact me at:
+  * Github: [fiona1nicdao](<https://github.com/fiona1nicdao>)
