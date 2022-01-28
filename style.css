@@ -57,6 +57,9 @@ button {
     color:#f0ffff;
     font-weight: 500;
 }
+.mainpart{
+    display: none;
+}
 .mainCity {
     background-color: #e8e9fa;
     border-radius: 10px;
