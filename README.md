@@ -23,6 +23,7 @@ Javascript, CSS, HTML, OpenWeatherMap [API](https://openweathermap.org/api)
 
 #Preview
 ![WeatherDashboard](./images/weather.png)
+![Chicago](./images/chicago.png)
 
 
  ## Questions
