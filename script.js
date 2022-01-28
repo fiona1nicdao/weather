@@ -108,7 +108,7 @@ function fetchData() {
         nameCity.classList.add("line")
 
         // get Date
-        var time = moment().format("MM/DD/YYYY");
+        var time = moment().format("MMM Do YYYY");
         var timeEl =document.createElement('h2')
         timeEl.textContent = time
         mainCity.append(timeEl)
