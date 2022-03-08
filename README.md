@@ -13,7 +13,7 @@
 - Present with a 5-day forecast that displays the date, icon representation of weather conditions, the temperature, the wind speed and humidity 
 - when I click on a City in the Search history, I am presented with the current and future conditions for that city 
 
-#Link to Webpage 
+# Link to Webpage 
 Here is the link to the [Weather Dashboard Webpage](https://fiona1nicdao.github.io/weather/)
 
  ## License 
