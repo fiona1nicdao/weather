@@ -14,7 +14,7 @@
 - when I click on a City in the Search history, I am presented with the current and future conditions for that city 
 
 #Link to Webpage 
-Here is the link to the [Weather Dashboard Webpage](https://fiona1nicdao.github.io/Homework_06/)
+Here is the link to the [Weather Dashboard Webpage](https://fiona1nicdao.github.io/weather/)
 
  ## License 
   This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
