@@ -74,7 +74,7 @@ function atlanta() {
 // fetch data 
 function fetchData() {
     document.getElementById('mainsection').classList.remove("mainpart")
-    document.getElementById("city").remove()
+    // document.getElementById("city").remove()
     var apiKey = 'b1d3856bac61869cb925c991abf62e2c'
     requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial' + '&appid=' + apiKey
 
